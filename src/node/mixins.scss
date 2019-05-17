@@ -1,0 +1,29 @@
+@mixin node($accessible: FALSE) {
+  @if ($accessible == FALSE) {
+    background-image: url(https://img.freepik.com/free-vector/hexagonal-pattern_1051-833.jpg?size=338&ext=jpg);
+    background-repeat: repeat;
+    background-color: #CCC;
+  }
+  @else {
+    background-color: #FFF;
+  }
+
+  .title {
+    span {
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 3em;
+
+      @if ($accessible == FALSE) {
+        display: inline-block;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .content {
+    @if ($accessible == FALSE) {
+      font-family: serif;
+    }
+  }
+}
